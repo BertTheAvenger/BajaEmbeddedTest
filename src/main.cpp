@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <ArduinoJson.h>
 #include <ModuleCore.h>
+#include "wifi_secrets.h"
 
 #define EN12 D1
 #define EN34 D7
@@ -61,8 +62,8 @@ void setup() {
     core.forceServerIP("192.168.1.111");
     core.forceServerPath("/");
     core.forceServerPort(420);
-    core.forceWiFiPassword("szastarka1!");
-    core.forceWiFiSSID("KA45A");
+    core.forceWiFiPassword(WIFI_PASSWORD);
+    core.forceWiFiSSID(WIFI_SSID);
 
     core.begin();
 }
